@@ -1,1 +1,257 @@
-/*# sourceMappingURL=bio.css.map */
+h1 {
+  font-size: 37px;
+  line-height: 32px;
+  font-family: "AvenirDemi";
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 32px;
+  font-family: "AvenirDemi";
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 34px;
+  font-family: "AvenirRegular";
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+p {
+  font-size: 24px;
+  line-height: 33px;
+  font-family: "AvenirRegular";
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.about__quote {
+  font-family: "AvenirDemi";
+  line-height: 46px;
+  font-size: 25px;
+}
+
+.footer__container-title {
+  font-family: "AvenirDemi";
+}
+
+@font-face {
+  font-family: "AvenirRegular";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirDemi";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirBold";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "AvenirRegular";
+  padding: 0;
+  color: #323232;
+}
+
+.header {
+  width: 100%;
+}
+.header__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  background-color: #323232;
+}
+.header__logo-link {
+  display: block;
+  text-align: center;
+}
+.header__logo {
+  width: 200px;
+  height: auto;
+  padding-top: 16px;
+  margin-top: 20px;
+}
+.header__title {
+  color: #FFFFFF;
+  padding: 100px 20px;
+  text-align: left;
+  background: url(/assets/images/hero-bio.jpg) no-repeat center center;
+  background-size: cover;
+  width: auto;
+  margin: 0;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.header__title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  z-index: 0;
+}
+.header__title h1 {
+  position: relative;
+  z-index: 2;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.nav__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-around;
+}
+.nav__link {
+  text-decoration: none;
+  font-size: 25px;
+  color: #E1E1E1;
+  position: relative;
+}
+.nav__link:hover {
+  border-bottom: 4px solid white;
+  padding-bottom: 12px;
+}
+.nav__link--active {
+  font-weight: bold;
+  color: white;
+}
+
+.about {
+  padding: 16px 16px 0 16px;
+}
+.about__image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+.about__title {
+  margin: 0;
+  padding: 24px 0;
+}
+
+.gallery {
+  background-color: #fafafa;
+  margin: 0;
+}
+.gallery__title {
+  text-align: left;
+  padding: 40px 16px 0px 16px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
+}
+.gallery__item {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .gallery__item {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
+}
+
+.gallery__image {
+  text-align: center;
+  margin: 0;
+  padding: 16px;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .gallery__image {
+    width: 40%;
+    margin: 3vw 0;
+    background: lightgreen;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .gallery__image {
+    width: 30%;
+    margin: 1.25vw 0;
+    background: lightpink;
+  }
+}
+
+.footer {
+  background-color: #323232;
+  color: #fff;
+  padding: 16px;
+}
+.footer p {
+  line-height: 30px;
+}
+.footer__email {
+  padding: 30px 0;
+}
+.footer__social-icons {
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+}
+.footer__social-icon {
+  width: 42px;
+  height: 42px;
+}
+.footer__copyright {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.footer__copyright #copywright {
+  font-size: 18px;
+  margin: 26px 0;
+}/*# sourceMappingURL=bio.css.map */
