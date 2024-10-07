@@ -2,24 +2,8 @@
 @use "partials/mixins" as *;
 @use "partials/global" as *;
 
-@font-face {
-    font-family: 'AvenirRegular';
-    src: url('../assets/fonts/AvenirNextLTPro-Regular.otf');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'AvenirDemi';
-    src: url('../assets/fonts/AvenirNextLTPro-Demi.otf');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'AvenirBold';
-    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf');
-    font-weight: 700;
+* {
+    overflow-x: hidden;
 }
 
 html {
@@ -28,11 +12,10 @@ html {
 
 body {
     margin: 0;
-    font-family: 'AvenirRegular';
+    font-family: $font-family-avenir-p-h3;
     padding: 0;
-    color: #323232;
+    color: $color-bandsiteblack;
 }
-
 
 .header {
     width: 100%;
@@ -42,30 +25,50 @@ body {
         flex-direction: column;
         justify-content: end;
         align-items: center;
-        background-color: #323232;
+        background-color: $color-bandsiteblack;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            padding: 1.25rem;
+
+        }
     }
 
     &__logo-link {
         display: block;
         text-align: center;
+
+        @include tablet {
+            width: 43%;
+
+        }
     }
 
     &__logo {
-        width: 200px;
+        width: 12.5rem;
         height: auto;
-        padding-top: 16px;
-        margin-top: 20px;
+        padding-top: 1rem;
+        margin-top: 1.25rem;
+
+        @include tablet {
+            width: 60%;
+
+        }
+
     }
 
     &__title {
         color: $color-white;
-        padding: 100px 20px;
+        padding: 6.25rem 1.25rem;
         text-align: left;
         background: url(/assets/images/hero-bio.jpg) no-repeat center center;
         background-size: cover;
         width: auto;
         margin: 0;
         display: flex;
+        align-items: center;
         position: relative;
         z-index: 1;
 
@@ -84,6 +87,11 @@ body {
             position: relative;
             z-index: 2;
         }
+
+        @include tablet {
+            margin: 0;
+            height: 45vh;
+        }
     }
 }
 
@@ -97,59 +105,132 @@ body {
         display: flex;
         list-style: none;
         padding: 0;
-        gap: 30px;
+        gap: 1.875rem;
         width: 100%;
         justify-content: space-around;
 
+        @include tablet {
+            gap: 3.125rem;
+            justify-content: left;
+            position: relative;
+            top: 1.0625rem;
+        }
     }
 
     &__link {
         text-decoration: none;
-        font-size: 25px;
+        font-size: $font-size-quote;
         color: $color-mercury;
         position: relative;
+        display: inline-block;
+        border-bottom: 0.3125rem solid transparent;
 
-        &:hover {
-            border-bottom: 4px solid white;
-            padding-bottom: 12px;
+        @include tablet {
+            font-size: $font-size-quote2-desktop;
         }
 
         &--active {
             font-weight: bold;
-            color: white;
+            color: $color-white;
+        }
+
+        &:hover {
+            border-bottom: 0.3125rem solid $color-white;
+            padding-bottom: 0.625rem;
+            color: $color-white;
         }
     }
 }
 
 .about {
-    padding: 16px 16px 0 16px;
+    padding: 1rem 1rem 0 1rem;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     &__image {
         width: 100%;
         height: auto;
-        margin: 20px 0;
+        margin: 1.25rem 0;
+
+        @include tablet {
+            width: 73%;
+        }
+
+        @include desktop {
+            width: 56%;
+        }
     }
 
     &__title {
         margin: 0;
-        padding: 24px 0;
+        padding: 1.5rem 0;
+
+        @include tablet {
+            align-self: flex-start;
+            padding-left: 3rem;
+        }
+    }
+
+    &__title-band {
+        @include tablet {
+            display: flex;
+            align-self: flex-start;
+            padding-left: 6.4375rem;
+        }
+
+        @include desktop {
+            padding-left: 19.6875rem;
+
+        }
+    }
+
+    &__quote-2 {
+        @include tablet {
+            display: flex;
+            align-self: flex-start;
+            padding-left: 6.1875rem;
+        }
+
+        @include desktop {
+            padding-left: 19.875rem;
+            
+        }
+
     }
 }
 
+.band__description {
+    @include tablet {
+        column-count: 2;
+        column-gap: 3.375rem;
+        padding-left: 6.5625rem;
+        padding-bottom: 1.25rem;
+    }
+
+    @include desktop {
+        width: 63%;
+    }
+}
 
 .gallery {
-    background-color: #fafafa;
+    background-color: $color-alabaster;
     margin: 0;
+
+    @include tablet {
+        padding: 2.875rem;
+    }
 
     &__title {
         text-align: left;
-        padding: 40px 16px 0px 16px;
+        padding: 2.5rem 1rem 0;
 
         @include tablet {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            align-content: space-evenly;
+            margin-top: 0;
+            padding-left: 1.5rem;
         }
     }
 
@@ -161,67 +242,178 @@ body {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-evenly;
-            align-content: space-evenly;
+        }
+    }
+
+    &__image {
+        text-align: center;
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        @include tablet {
+            width: 32%;
+            margin: -0.75vw 0;
         }
     }
 }
 
-.gallery__image {
-    text-align: center;
-    margin: 0;
-    padding: 16px;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    box-sizing: border-box;
-
+.footer {
+    background-color: $color-bandsiteblack;
+    color: $color-white;
+    padding: 1rem;
 
     @include tablet {
-        width: 40%;
-        margin: 3vw 0;
-        background: lightgreen;
+        padding: 3.8125rem;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 0;
     }
 
     @include desktop {
-        width: 30%;
-        margin: 1.25vw 0;
-        background: lightpink;
+        display: flex;
+        flex-direction: column;
+
     }
-}
-
-
-.footer {
-    background-color: #323232;
-    color: #fff;
-    padding: 16px;
 
     p {
-        line-height: 30px;
+        line-height: 1.875rem;
     }
 
-    &__email {
-        padding: 30px 0;
+    &__logo {
+        width: 20%;
+
+        @include desktop {
+            width: 10%;
+        }
+
+    }
+
+    &__title {
+        @include tablet {
+            display: flex;
+            position: relative;
+            top: -4rem;
+        }
+
+        @include desktop {
+            display: flex;
+        }
     }
 
     &__social-icons {
         display: flex;
-        gap: 40px;
-        margin: 40px 0;
+        justify-content: flex-start;
+        gap: 2.5rem;
+        margin: 2.5rem 0;
+
+        @include tablet {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: -10.375rem;
+            left: -1.75rem;
+
+            @include desktop {
+                display: flex;
+                justify-content: normal;
+                padding-left: 18.8125rem;
+                gap: 1.375rem;
+
+            }
+
+        }
     }
 
     &__social-icon {
-        width: 42px;
-        height: 42px;
+        width: 2.625rem;
+        height: 2.625rem;
+
+        @include tablet {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
+
+    &__container {
+        &--title {
+            font-family: $font-family-avenir-h1-h2-quote-tablet;
+
+            @include tablet {
+                font-size: 1.0625rem;
+            }
+        }
+    }
+
+    &__containers {
+        @include tablet {
+            display: flex;
+            position: relative;
+            top: -10.1875rem;
+            justify-content: flex-start;
+            gap: 0.5rem;
+        }
+
+        @include desktop {
+            gap: 2.5rem;
+        }
+    }
+
+    &__container p {
+        @include tablet {
+            font-size: $font-size-p-tablet;
+        }
+
+    }
+
+    &__email {
+        padding: 1.875rem 0;
+    }
+
     &__copyright {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
 
+        @include tablet {
+            position: relative;
+            top: -11.4375rem;
+
+        }
+
         #copywright {
-            font-size: 18px;
-            margin: 26px 0;
+            font-size: $font-size-quote2-desktop;
+            margin: 1.625rem 0;
+            margin-bottom: 0;
+
+            @include tablet {
+                font-size: $font-size-p-tablet;
+            }
+        }
+    }
+
+    &__logo-link {
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--tablet {
+            display: none;
+
+            @include tablet {
+                display: flex;
+                justify-content: flex-end;
+            }
         }
     }
 }
+
+
+
+
 
