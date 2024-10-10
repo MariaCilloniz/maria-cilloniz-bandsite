@@ -19,6 +19,8 @@ body {
 
 .header {
     width: 100%;
+    background-color: $color-bandsiteblack;
+
 
     &__main {
         display: flex;
@@ -26,22 +28,22 @@ body {
         justify-content: end;
         align-items: center;
         background-color: $color-bandsiteblack;
+        padding-top: 25px;
+        
 
         @include tablet {
             display: flex;
             flex-direction: row;
             height: 100%;
-            padding: 1.25rem;
-
         }
     }
 
     &__logo-link {
         display: block;
-        text-align: center;
+        text-align: left;
 
         @include tablet {
-            width: 43%;
+            width: 31%;
 
         }
     }
@@ -49,11 +51,11 @@ body {
     &__logo {
         width: 12.5rem;
         height: auto;
-        padding-top: 1rem;
-        margin-top: 1.25rem;
+        padding: 1rem 0;
 
         @include tablet {
-            width: 60%;
+            width: 79%;
+            padding: 28px;
 
         }
 
@@ -84,7 +86,6 @@ body {
         }
 
         h1 {
-            position: relative;
             z-index: 2;
         }
 
@@ -95,48 +96,53 @@ body {
     }
 }
 
-
 .nav {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin: 0;
+    align-self: stretch;
 
     &__list {
         display: flex;
         list-style: none;
         padding: 0;
+        margin: 0;
         gap: 1.875rem;
         width: 100%;
         justify-content: space-around;
-
+        align-items: center;
         @include tablet {
             gap: 3.125rem;
             justify-content: left;
-            position: relative;
-            top: 1.0625rem;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        font-size: $font-size-quote;
+        padding-bottom: 0.625rem;
+
+        &:hover, &:active {
+            border-bottom: 0.3125rem solid $color-white;
+            padding-bottom: 0.625rem;
+            color: $color-white;
+            font-weight: bold;
         }
     }
 
     &__link {
         text-decoration: none;
+        color: $color-silver;
         font-size: $font-size-quote;
-        color: $color-mercury;
-        position: relative;
-        display: inline-block;
-        border-bottom: 0.3125rem solid transparent;
+        padding-bottom: 0.625rem;
 
         @include tablet {
-            font-size: $font-size-quote2-desktop;
+            font-size: 18px;
         }
 
-        &--active {
-            font-weight: bold;
-            color: $color-white;
-        }
-
-        &:hover {
-            border-bottom: 0.3125rem solid $color-white;
-            padding-bottom: 0.625rem;
+        &:hover, &:active {
             color: $color-white;
         }
     }
@@ -197,7 +203,7 @@ body {
 
         @include desktop {
             padding-left: 19.875rem;
-            
+
         }
 
     }
@@ -253,6 +259,12 @@ body {
         height: auto;
         max-width: 100%;
         box-sizing: border-box;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+
+        &:hover {
+            filter: grayscale(0%);
+        }
 
         @include tablet {
             width: 32%;
@@ -371,49 +383,294 @@ body {
 
     &__email {
         padding: 1.875rem 0;
-    }
 
-    &__copyright {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+        a {
+            text-decoration: none;
+            color: $color-white;
 
-        @include tablet {
-            position: relative;
-            top: -11.4375rem;
-
-        }
-
-        #copywright {
-            font-size: $font-size-quote2-desktop;
-            margin: 1.625rem 0;
-            margin-bottom: 0;
-
-            @include tablet {
-                font-size: $font-size-p-tablet;
-            }
-        }
-    }
-
-    &__logo-link {
-        &--mobile {
-            @include tablet {
-                display: none;
-            }
-        }
-
-        &--tablet {
-            display: none;
-
-            @include tablet {
-                display: flex;
-                justify-content: flex-end;
-            }
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
 
+&__copyright {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include tablet {
+        position: relative;
+        top: -11.4375rem;
+
+    }
+
+    #copywright {
+        font-size: $font-size-quote2-desktop;
+        margin: 1.625rem 0;
+        margin-bottom: 0;
+
+        @include tablet {
+            font-size: $font-size-p-tablet;
+        }
+    }
+}
+
+&__logo-link {
+    &--mobile {
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &--tablet {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+}
+
+.conversation{
+    &__title{
+        padding-left: 16px;
+        @include desktop{
+            padding-left: 32px
+        }
+    }
+}
+.conversation-list {
+    padding: 16px;
+    max-width: 600px;
+    margin: auto;
+    .list__item {
+      .list__title {
+        font-weight: 700;
+        font-family: $font-family-avenir-h1-h2-quote-tablet;
+      }
+      .list__date{
+        color: $color-silver;
+        font-size: 12px;
+        margin: 0;
+
+      }
+    }
+  }
+
+.list__photo{
+        border-radius: 50%;
+        width: 58px;
+        height: 50px; 
+        background-color: $color-mercury; 
+        object-fit: cover;
+}
+    
 
 
+.list__item {
+    padding: 10px;
+    border-bottom: 1px solid $color-silver;
+    margin-bottom: 20px;
+    background-color: $color-white;
+    display: flex;
+    align-items: flex-start;
+    
+    .list__photo {
+        width: 50px;
+        height: 50px;
+        background-color: #e5e5e5; 
+        border-radius: 50%; 
+        margin-right: 10px; 
+        flex-shrink: 0;
+        margin-left: -10px;
+
+      }
+}
+.list__content{
+    flex:1;
+
+}
+
+.list__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.list__title {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .list__comment {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
 
 
+.conversation__form{
+    padding: 10px;
+    border-bottom: 1px solid #AFAFAF;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        width: 61%;
+        margin: auto;
+    }
+    @include desktop{
+        width: 37%;
+    }
+    
+
+}
+.comment__header{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 16px;
+}
+
+.input{
+    width: 100%;
+}
+.input2{
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    
+    
+}
+.comment{
+    display: block;
+    font-size: 14px;
+    color: $color-silver;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.name {
+    display: block;
+    font-size: 14px;
+    color: $color-silver;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.text {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: $font-family-avenir-p-h3;
+}
+
+#comment{
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    min-height: 100px;
+    margin-bottom: 16px;
+    font-family: $font-family-avenir-p-h3;
+
+}
+
+.input-comment{
+    width: 100%;
+}
+
+.list__photo1 {
+    width: 50px;
+    height: 50px;
+    background-color: #e5e5e5; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+    flex-shrink: 0;
+    margin-left: -10px;
+}
+
+.list__photo1:empty {
+    visibility: hidden;              /* Hides the placeholder for missing images */
+}
+.area{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+button {
+    background-color: #323232; 
+    font-family: $font-family-avenir-h1-h2-quote-tablet;
+    color: #FFFFFF;            
+    border: none;              
+    border-radius: 4px;        
+    height: 40px;              
+    min-width: 97%;                    
+    text-align: center;        
+    font-size: 16px;  
+    margin: auto;         
+    cursor: pointer;    
+    
+    @include tablet{
+        min-width: 200px;
+        margin: 0;
+    }
+}
+
+
+//   <!-- <li class="list__item">
+//   <div class="list__photo"> </div>
+//   <div class="list__content">
+//       <div class="list__info">
+//           <p class="list__title"> Victor Pinto </p>
+//           <p class="list__date"> 11/02/2023 </p>
+//       </div>
+//       <div class="list__comment"> This is art. This is inexplicable magic expressed in the purest way,
+//           everything
+//           that makes up this majestic work deserves reverence. Let us appreciate this for what it is
+//           and
+//           what it contains.
+//       </div>
+//   </div>
+// </li>
+
+// <li class="list__item">
+//   <div class="list__photo"> </div>
+//   <div class="list__content">
+//       <div class="list__info">
+//           <p class="list__title"> Christina Cabrera </p>
+//           <p class="list__date"> 10/28/2023 </p>
+//       </div>
+//       <div class="list__comment"> I feel blessed to have seen them in person. What a show! They were
+//           just
+//           perfection.
+//           If there was one day of my life I could relive, this would be it. What an incredible day.
+//       </div>
+//   </div>
+// </li>
+
+// <li class="list__item">
+//   <div class="list__photo"> </div>
+//   <div class="list__content">
+//       <div class="list__info">
+//           <p class="list__title"> Isaac Tadesse </p>
+//           <p class="list__date"> 10/20/2023 </p>
+//       </div>
+//       <div class="list__comment"> I can't stop listening. Every time I hear one of their songs - the
+//           vocals - it
+//           gives me goosebumps. Shivers straight down my spine. What a beautiful expression of
+//           creativity. Can't
+//           get enough.
+//       </div>
+//   </div>
+// </li> -->
