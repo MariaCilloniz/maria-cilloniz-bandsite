@@ -515,32 +515,32 @@ p {
     padding-left: 64px;
   }
 }
+.conversation__form {
+  padding: 10px;
+  border-bottom: 1px solid #AFAFAF;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .conversation__form {
+    width: 61%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .conversation__form {
+    width: 37%;
+  }
+}
 
 .conversation-list {
   padding: 16px;
   max-width: 600px;
   margin: auto;
 }
-.conversation-list .list__item .list__title {
-  font-weight: 700;
-  font-family: "AvenirDemi";
-}
-.conversation-list .list__item .list__date {
-  color: #AFAFAF;
-  font-size: 12px;
-  margin: 0;
-}
-
-.list__photo {
-  border-radius: 50%;
-  width: 58px;
-  height: 50px;
-  background-color: #E1E1E1;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.list__item {
+.conversation-list .list__item {
   padding: 10px;
   border-bottom: 1px solid #AFAFAF;
   margin-bottom: 20px;
@@ -548,7 +548,17 @@ p {
   display: flex;
   align-items: flex-start;
 }
-.list__item .list__photo {
+.conversation-list .list__title {
+  font-weight: 700;
+  font-family: "AvenirDemi";
+}
+.conversation-list .list__date {
+  color: #AFAFAF;
+  font-size: 12px;
+  margin: 0;
+}
+
+.list__photo {
   width: 50px;
   height: 50px;
   background-color: #e5e5e5;
@@ -556,6 +566,9 @@ p {
   margin-right: 10px;
   flex-shrink: 0;
   margin-left: -10px;
+  background-color: #E1E1E1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .list__content {
@@ -579,26 +592,6 @@ p {
   font-size: 16px;
   line-height: 1.6;
   color: #555;
-}
-
-.conversation__form {
-  padding: 10px;
-  border-bottom: 1px solid #AFAFAF;
-  margin-bottom: 20px;
-  background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-}
-@media screen and (min-width: 768px) {
-  .conversation__form {
-    width: 61%;
-    margin: auto;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .conversation__form {
-    width: 37%;
-  }
 }
 
 .comment__header {
@@ -670,7 +663,7 @@ p {
 }
 
 .list__photo1:empty {
-  visibility: hidden; /* Hides the placeholder for missing images */
+  visibility: hidden;
 }
 
 .area {
@@ -699,15 +692,18 @@ button {
   }
 }
 
-input, textarea {
+input,
+textarea {
   border: 1px solid #E1E1E1;
 }
 
-input.error, #comment.error {
+input.error,
+#comment.error {
   border: 1px solid #D22D2D;
 }
 
-input:focus, #comment:focus {
+input:focus,
+#comment:focus {
   border: 2px solid #323232;
   outline: none;
 }/*# sourceMappingURL=bio.css.map */

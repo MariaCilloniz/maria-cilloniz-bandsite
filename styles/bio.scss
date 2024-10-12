@@ -14,7 +14,7 @@
         align-items: center;
         background-color: $color-bandsiteblack;
         padding-top: 25px;
-        
+
 
         @include tablet {
             display: flex;
@@ -97,6 +97,7 @@
         width: 100%;
         justify-content: space-around;
         align-items: center;
+
         @include tablet {
             gap: 3.125rem;
             justify-content: left;
@@ -109,7 +110,8 @@
         font-size: $font-size-quote;
         padding-bottom: 0.625rem;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             border-bottom: 0.3125rem solid $color-white;
             padding-bottom: 0.625rem;
             color: $color-white;
@@ -127,7 +129,8 @@
             font-size: 18px;
         }
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             color: $color-white;
         }
     }
@@ -373,111 +376,123 @@
             text-decoration: none;
             color: $color-white;
 
-        &:hover {
-            text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
-}
 
-&__copyright {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-
-    @include tablet {
-        position: relative;
-        top: -11.4375rem;
-
-    }
-
-    #copywright {
-        font-size: $font-size-quote2-desktop;
-        margin: 1.625rem 0;
-        margin-bottom: 0;
+    &__copyright {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
         @include tablet {
-            font-size: $font-size-p-tablet;
+            position: relative;
+            top: -11.4375rem;
+
+        }
+
+        #copywright {
+            font-size: $font-size-quote2-desktop;
+            margin: 1.625rem 0;
+            margin-bottom: 0;
+
+            @include tablet {
+                font-size: $font-size-p-tablet;
+            }
         }
     }
-}
 
-&__logo-link {
-    &--mobile {
-        @include tablet {
+    &__logo-link {
+        &--mobile {
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &--tablet {
             display: none;
-        }
-    }
 
-    &--tablet {
-        display: none;
-
-        @include tablet {
-            display: flex;
-            justify-content: flex-end;
+            @include tablet {
+                display: flex;
+                justify-content: flex-end;
+            }
         }
     }
 }
-}
 
-.conversation{
-    &__title{
+.conversation {
+    &__title {
         padding-left: 16px;
 
-        @include tablet{
+        @include tablet {
             margin-top: 0;
             padding-left: 64px;
         }
     }
+
+    &__form {
+        padding: 10px;
+        border-bottom: 1px solid #AFAFAF;
+        margin-bottom: 20px;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            width: 61%;
+            margin: auto;
+        }
+
+        @include desktop {
+            width: 37%;
+        }
+    }
 }
+
 .conversation-list {
     padding: 16px;
     max-width: 600px;
     margin: auto;
+
     .list__item {
-      .list__title {
+        padding: 10px;
+        border-bottom: 1px solid $color-silver;
+        margin-bottom: 20px;
+        background-color: $color-white;
+        display: flex;
+        align-items: flex-start;
+    }
+    .list__title {
         font-weight: 700;
         font-family: $font-family-avenir-h1-h2-quote-tablet;
-      }
-      .list__date{
+    }
+    .list__date {
         color: $color-silver;
         font-size: 12px;
         margin: 0;
 
-      }
     }
-  }
-
-.list__photo{
-        border-radius: 50%;
-        width: 58px;
-        height: 50px; 
-        background-color: $color-mercury; 
-        object-fit: cover;
 }
-    
 
 
-.list__item {
-    padding: 10px;
-    border-bottom: 1px solid $color-silver;
-    margin-bottom: 20px;
-    background-color: $color-white;
-    display: flex;
-    align-items: flex-start;
-    
-    .list__photo {
+.list__photo {
         width: 50px;
         height: 50px;
-        background-color: #e5e5e5; 
-        border-radius: 50%; 
-        margin-right: 10px; 
+        background-color: #e5e5e5;
+        border-radius: 50%;
+        margin-right: 10px;
         flex-shrink: 0;
         margin-left: -10px;
+        background-color: $color-mercury;
+        object-fit: cover;
 
-      }
-}
-.list__content{
-    flex:1;
+ }
+
+
+.list__content {
+    flex: 1;
 
 }
 
@@ -492,51 +507,33 @@
     font-weight: bold;
     font-size: 18px;
     margin: 0;
-  }
+}
 
-  .list__comment {
+.list__comment {
     font-size: 16px;
     line-height: 1.6;
     color: #555;
-  }
-
-
-.conversation__form{
-    padding: 10px;
-    border-bottom: 1px solid #AFAFAF;
-    margin-bottom: 20px;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    @include tablet{
-        width: 61%;
-        margin: auto;
-    }
-    @include desktop{
-        width: 37%;
-    }
-    
-
 }
-.comment__header{
+
+.comment__header {
     display: flex;
     align-items: flex-start;
     gap: 20px;
     padding: 16px;
 }
 
-.input{
+.input {
     width: 100%;
 }
-.input2{
+
+.input2 {
     display: flex;
     align-items: flex-start;
     gap: 16px;
     padding: 16px;
-    
-    
 }
-.comment{
+
+.comment {
     display: block;
     font-size: 14px;
     color: $color-silver;
@@ -561,7 +558,7 @@
     font-family: $font-family-avenir-p-h3;
 }
 
-#comment{
+#comment {
     width: 90%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -573,103 +570,61 @@
 
 }
 
-.input-comment{
+.input-comment {
     width: 100%;
 }
 
 .list__photo1 {
     width: 50px;
     height: 50px;
-    background-color: #e5e5e5; 
-    border-radius: 50%; 
-    margin-right: 10px; 
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    margin-right: 10px;
     flex-shrink: 0;
     margin-left: -10px;
 }
 
 .list__photo1:empty {
-    visibility: hidden;              /* Hides the placeholder for missing images */
+    visibility: hidden;
 }
-.area{
+
+.area {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
+
 button {
-    background-color: #323232; 
+    background-color: #323232;
     font-family: $font-family-avenir-h1-h2-quote-tablet;
-    color: #FFFFFF;            
-    border: none;              
-    border-radius: 4px;        
-    height: 40px;              
-    min-width: 97%;                    
-    text-align: center;        
-    font-size: 16px;  
-    margin: auto;         
-    cursor: pointer;    
-    
-    @include tablet{
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    min-width: 97%;
+    text-align: center;
+    font-size: 16px;
+    margin: auto;
+    cursor: pointer;
+
+    @include tablet {
         min-width: 200px;
         margin: 0;
     }
 }
 
-input, textarea {
+input,
+textarea {
     border: 1px solid $color-mercury
 }
 
-input.error, #comment.error {
+input.error,
+#comment.error {
     border: 1px solid #D22D2D;
 }
-input:focus, #comment:focus{
+
+input:focus,
+#comment:focus {
     border: 2px solid $color-bandsiteblack;
     outline: none;
 }
-
-
-//   <!-- <li class="list__item">
-//   <div class="list__photo"> </div>
-//   <div class="list__content">
-//       <div class="list__info">
-//           <p class="list__title"> Victor Pinto </p>
-//           <p class="list__date"> 11/02/2023 </p>
-//       </div>
-//       <div class="list__comment"> This is art. This is inexplicable magic expressed in the purest way,
-//           everything
-//           that makes up this majestic work deserves reverence. Let us appreciate this for what it is
-//           and
-//           what it contains.
-//       </div>
-//   </div>
-// </li>
-
-// <li class="list__item">
-//   <div class="list__photo"> </div>
-//   <div class="list__content">
-//       <div class="list__info">
-//           <p class="list__title"> Christina Cabrera </p>
-//           <p class="list__date"> 10/28/2023 </p>
-//       </div>
-//       <div class="list__comment"> I feel blessed to have seen them in person. What a show! They were
-//           just
-//           perfection.
-//           If there was one day of my life I could relive, this would be it. What an incredible day.
-//       </div>
-//   </div>
-// </li>
-
-// <li class="list__item">
-//   <div class="list__photo"> </div>
-//   <div class="list__content">
-//       <div class="list__info">
-//           <p class="list__title"> Isaac Tadesse </p>
-//           <p class="list__date"> 10/20/2023 </p>
-//       </div>
-//       <div class="list__comment"> I can't stop listening. Every time I hear one of their songs - the
-//           vocals - it
-//           gives me goosebumps. Shivers straight down my spine. What a beautiful expression of
-//           creativity. Can't
-//           get enough.
-//       </div>
-//   </div>
-// </li> -->

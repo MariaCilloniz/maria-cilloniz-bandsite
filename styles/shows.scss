@@ -5,56 +5,55 @@
 body, html {
     margin: 0;
     padding: 0;
-    width: 100%;  /* Ensure the body and html fill the width */
-    overflow-x: hidden; /* Prevent horizontal overflow caused by layout issues */
-  }
+    width: 100%;  
+    overflow-x: hidden; 
+}
 
 .hero {
     position: relative;
-    background: url(../assets/images/hero-shows.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: url(../assets/images/hero-shows.jpg) no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 480px;
-}
-
-.hero__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(50, 50, 50, 0.5);
-    z-index: 1;
-}
-
-.hero__content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: left;
-    padding: 20px;
-
-    h1 {
+  
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(50, 50, 50, 0.5);
+      z-index: 1;
+    }
+  
+    &__content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: left;
+      padding: 20px;
+  
+      h1 {
         line-height: 56px;
         padding-left: 34px;
         width: 74%;
-
-        @include tablet{
-            width: 67%;
-            margin-bottom: 30px;
+  
+        @include tablet {
+          width: 67%;
+          margin-bottom: 30px;
         }
-        @include desktop{
-            width: 45%;
+  
+        @include desktop {
+          width: 45%;
         }
-    }
-
-    h3 {
+      }
+  
+      h3 {
         font-size: 1.3rem;
         padding-left: 34px;
+      }
     }
-}
+  }
 
 .audio-player {
     width: 100%;
@@ -98,7 +97,6 @@ body, html {
     }
 }
 
-
 .shows-table,
 .shows-table thead,
 .shows-table tbody,
@@ -119,8 +117,6 @@ body, html {
     margin-top: 10px;  
 
 }
-
-
 
 .shows-table thead {
     display: none;
@@ -148,8 +144,6 @@ body, html {
         border-collapse: collapse;
         margin-top: 30px;
     }
-
-   
 
     @include tablet {
         thead {
