@@ -219,3 +219,10 @@ body, html {
             display: none;
         }
 }
+.shows__item:hover {
+    background-color: $color-alabaster;
+}
+
+.shows__item.selected {
+    background-color: $color-mercury;
+}

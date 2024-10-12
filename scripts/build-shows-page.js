@@ -113,7 +113,15 @@ function loopAndAppendComments(listArray) {
 
 loopAndAppendComments(showsArray);
 
+const rows = document.querySelectorAll('.shows__item');
 
+rows.forEach(row => {
+    row.addEventListener('click', function() {
+        rows.forEach(r => r.classList.remove('selected'));
+        
+        this.classList.add('selected');
+    });
+});
 
 
 

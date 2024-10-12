@@ -323,4 +323,12 @@ body, html {
   .mobile-label {
     display: none;
   }
+}
+
+.shows__item:hover {
+  background-color: #fafafa;
+}
+
+.shows__item.selected {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */
