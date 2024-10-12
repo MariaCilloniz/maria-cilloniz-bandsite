@@ -1,1 +1,316 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "AvenirRegular";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirDemi";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AvenirBold";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "AvenirRegular";
+  color: #323232;
+}
+
+h1 {
+  font-size: 2.3125rem;
+  line-height: 2rem;
+  font-family: "AvenirDemi";
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-size: 2.2rem;
+  line-height: 2rem;
+  font-family: "AvenirDemi";
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+  font-family: "AvenirRegular";
+}
+@media screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.875rem;
+    line-height: 2.75rem;
+    font-family: "AvenirDemi";
+  }
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 2.0625rem;
+  font-family: "AvenirRegular";
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.6875rem;
+  }
+}
+
+.about__quote {
+  font-family: "AvenirDemi";
+  line-height: 2.875rem;
+  font-size: 1.5625rem;
+}
+@media screen and (min-width: 768px) {
+  .about__quote {
+    font-size: 1.5rem;
+    width: 74%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about__quote {
+    font-size: 1.25rem;
+    width: 56%;
+    line-height: 1.875rem;
+  }
+}
+
+.about__quote-2 {
+  font-family: "AvenirDemi";
+  line-height: 2.875rem;
+  font-size: 1.5625rem;
+}
+@media screen and (min-width: 768px) {
+  .about__quote-2 {
+    font-size: 1.125rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about__quote-2 {
+    font-size: 1rem;
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure the body and html fill the width */
+  overflow-x: hidden; /* Prevent horizontal overflow caused by layout issues */
+}
+
+.hero {
+  position: relative;
+  background: url(../assets/images/hero-shows.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 480px;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: left;
+  padding: 20px;
+}
+.hero__content h1 {
+  line-height: 56px;
+  padding-left: 34px;
+  width: 74%;
+}
+@media screen and (min-width: 768px) {
+  .hero__content h1 {
+    width: 67%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__content h1 {
+    width: 45%;
+  }
+}
+.hero__content h3 {
+  font-size: 1.3rem;
+  padding-left: 34px;
+}
+
+.audio-player {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .audio-player {
+    width: 100%;
+    max-width: 500px;
+    margin-left: 27px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .audio {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    bottom: 158px;
+  }
+}
+
+.shows__title {
+  padding-left: 22px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .shows__title {
+    position: absolute;
+    left: 29px;
+    margin-top: 0;
+  }
+}
+
+.shows {
+  padding: 28px;
+}
+@media screen and (min-width: 1024px) {
+  .shows {
+    margin-left: 40%;
+  }
+}
+
+.shows-table,
+.shows-table thead,
+.shows-table tbody,
+.shows-table th,
+.shows-table td,
+.shows-table tr {
+  margin: auto;
+  width: 388px;
+  margin-left: 10px;
+}
+.date .mobile-label {
+  border-top: 1px solid #AFAFAF;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.shows-table thead {
+  display: none;
+}
+
+.shows__item {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #AFAFAF;
+}
+
+.shows__item td {
+  display: block;
+  text-align: left;
+  border: none;
+  padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .shows-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows-table thead {
+    display: table-header-group;
+  }
+  .shows-table tbody {
+    display: table-row-group;
+    width: auto;
+  }
+  .shows-table th,
+  .shows-table td {
+    display: table-cell;
+    padding: 12px;
+    text-align: left;
+  }
+  .shows-table th {
+    text-transform: uppercase;
+    font-family: "AvenirDemi";
+    font-size: 14px;
+    color: #AFAFAF;
+  }
+  .shows-table td {
+    padding: 12px;
+  }
+  .shows-table td button {
+    width: auto;
+    padding: 8px 12px;
+  }
+}
+
+.date {
+  font-family: "AvenirDemi";
+}
+
+.dateInput {
+  font-family: "AvenirDemi";
+}
+
+#button2 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  min-width: 96%;
+}
+@media screen and (min-width: 1024px) {
+  #button2 {
+    min-width: 50%;
+  }
+}
+
+.mobile-label {
+  display: flex;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  line-height: 20px;
+  font-family: "AvenirDemi";
+  font-size: 16px;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  .mobile-label {
+    display: none;
+  }
+}/*# sourceMappingURL=shows.css.map */

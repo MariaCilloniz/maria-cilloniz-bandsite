@@ -1,6 +1,7 @@
 @use "mixins" as *;
 @use "variables" as *;
 
+
 @font-face {
     font-family: 'AvenirRegular';
     src: url('../assets/fonts/AvenirNextLTPro-Regular.otf');
@@ -20,6 +21,16 @@
     src: url('../assets/fonts/AvenirNextLTPro-Bold.otf');
     font-weight: 700;
 }
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;  
+    overflow-x: hidden; 
+    font-family: $font-family-avenir-p-h3;
+    color: $color-bandsiteblack;
+  }
 
 h1 {
     font-size: $font-size-h1;

@@ -1,5 +1,4 @@
 
-
 const commentsArray = [
     { title: "Victor Pinto", date: "11/02/2023", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." },
     { title: "Christina Cabrera", date: "10/28/2023", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." },
@@ -22,8 +21,18 @@ conversationForm.addEventListener("submit", function (event) {
     event.preventDefault();
     console.log("form submitted");
 
+    event.target.name.classList.remove("error");
+    event.target.comment.classList.remove("error");
+
     if (!event.target.name.value) {
         alert("Please enter your name.");
+        event.target.name.classList.add("error");
+        return;
+    }
+
+    if (!event.target.comment.value) {
+        alert("Please enter your comment.");
+        event.target.comment.classList.add("error"); 
         return;
     }
 
@@ -40,8 +49,10 @@ conversationForm.addEventListener("submit", function (event) {
 
     event.target.name.value = "";
     event.target.comment.value = "";
-});
 
+    event.target.name.classList.remove("error");
+    event.target.comment.classList.remove("error");
+});
 
 
 function loopAndAppendComments(listArray) {

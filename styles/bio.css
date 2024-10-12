@@ -15,6 +15,15 @@
   src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
   font-weight: 700;
 }
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "AvenirRegular";
+  color: #323232;
+}
+
 h1 {
   font-size: 2.3125rem;
   line-height: 2rem;
@@ -98,21 +107,6 @@ p {
   .about__quote-2 {
     font-size: 1rem;
   }
-}
-
-* {
-  overflow-x: hidden;
-}
-
-html {
-  margin: 0;
-}
-
-body {
-  margin: 0;
-  font-family: "AvenirRegular";
-  padding: 0;
-  color: #323232;
 }
 
 .header {
@@ -515,9 +509,10 @@ body {
 .conversation__title {
   padding-left: 16px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .conversation__title {
-    padding-left: 32px;
+    margin-top: 0;
+    padding-left: 64px;
   }
 }
 
@@ -702,4 +697,17 @@ button {
     min-width: 200px;
     margin: 0;
   }
+}
+
+input, textarea {
+  border: 1px solid #E1E1E1;
+}
+
+input.error, #comment.error {
+  border: 1px solid #D22D2D;
+}
+
+input:focus, #comment:focus {
+  border: 2px solid #323232;
+  outline: none;
 }/*# sourceMappingURL=bio.css.map */
