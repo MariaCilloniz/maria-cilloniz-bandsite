@@ -91,68 +91,6 @@ body, html {
     }
 }
 
-
-
-
-
-
-
-// other code
-// .shows-list {
-//     padding: 16px;
-//     max-width: 600px;
-//     margin: auto;
-//     list-style: none;
-// }
-
-// .shows__item {
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     margin: auto;
-
-// @include desktop {
-//     padding: 10px;
-//     border-bottom: 1px solid $color-silver;
-//     margin-bottom: 20px;
-//     background-color: $color-white;
-
-// }
-
-// .date,
-// .venue,
-// .location {
-//     display: block;
-//     font-family: $font-family-avenir-h1-h2-quote-tablet;
-//     font-size: 22px;
-//     color: $color-silver;
-//     margin-bottom: 6px;
-//     margin-top: 22px;
-// }
-
-// @include tablet{
-//     display: flex;
-// }
-
-// TABLE CODE
-
-// .shows-table {
-
-//     @include desktop {
-//         margin-left: 436px;
-//         width: 80%;
-//     }
-// }
-
-// .shows__item{
-//     display: flex;
-//     flex-direction: column;
-
-//     @include desktop{
-
-//     }
-// }
-
 .shows{
     padding: 28px;
     @include desktop{
@@ -169,12 +107,10 @@ body, html {
 .shows-table tr {
     margin: auto;
     width: 388px;
-    margin-left: 10px;
     
-
-    @include tablet{
-        
-    }
+    @include desktop{
+        width:67px;
+}
 }
 
 .date .mobile-label {
@@ -205,15 +141,6 @@ body, html {
     padding: 10px;
 }
 
-// .shows__item td:before {
-//     content: attr(class);
-//     font-weight: bold;
-//     text-transform: uppercase;
-//     display: block;
-//     color: #fff;
-//     font-size: 12px;
-// }
-
 .shows-table {
     @include tablet {
         display: table;
@@ -221,6 +148,8 @@ body, html {
         border-collapse: collapse;
         margin-top: 30px;
     }
+
+   
 
     @include tablet {
         thead {
@@ -263,27 +192,6 @@ body, html {
 }
 
 
-// not sure about this
-// .shows__item td button:hover {
-//     background-color: #555;
-// }
-
-// .shows-table {
-//     @include tablet {
-//         display: table;
-//         width: 100%;
-//         border-collapse: collapse;
-//     }
-// }
-// .shows-table thead {
-//     @include tablet{
-//         display: table-header-group; 
-//     }
-// }
-
-
-
-
 .dateInput {
     font-family: $font-family-avenir-h1-h2-quote-tablet;
 }
@@ -293,7 +201,7 @@ body, html {
     margin-bottom: 0;
     min-width: 96%;
     @include desktop{
-        min-width: 50%;
+        min-width: 90%
     }
 }
 

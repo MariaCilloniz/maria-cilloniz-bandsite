@@ -51,52 +51,54 @@ function loopAndAppendComments(listArray) {
 
     for (i = 0; i < listArray.length; i++) {
 
-
         const showItem = document.createElement("tr")
         showItem.classList.add("shows__item");
-        tableBody.appendChild(showItem)
+        tableBody.appendChild(showItem);
 
-
-        const showDate = document.createElement("td")
-        showDate.classList.add("date")
-        
-        showDate.textContent = listArray[i].date;
-        showItem.appendChild(showDate);
-
+          // Date: 
+        const showDate = document.createElement("td");
+        showDate.classList.add("date");
+        showDate.textContent = listArray[i].date; 
 
         const mobileDate = document.createElement("span");
         mobileDate.classList.add("mobile-label");
-        mobileDate.textContent = "Date"; 
-        showDate.appendChild(mobileDate);
+        mobileDate.textContent = "Date";
 
-        const inputDate = document.createElement("td")
-        inputDate.textContent=listArray[i].date
+        showDate.insertBefore(mobileDate, showDate.firstChild);  // Insert <span> at the beginning of <td>
 
+        showItem.appendChild(showDate);
+
+        // Venue
 
         const showVenue = document.createElement("td")
         showVenue.classList.add("venue");
         showVenue.textContent = listArray[i].venue;
-        showItem.appendChild(showVenue);
 
 
         const mobileVenue = document.createElement("span");
         mobileVenue.classList.add("mobile-label");
-        showVenue.appendChild(mobileVenue);
         mobileVenue.textContent = "Venue";
 
+        showVenue.insertBefore(mobileVenue, showVenue.firstChild);
+
+        showItem.appendChild(showVenue);
         
-
-
+        // Location
 
         const showLocation = document.createElement("td")
         showLocation.classList.add("location");
         showLocation.textContent = listArray[i].location;
-        showItem.appendChild(showLocation);
+
 
         const mobileLocation = document.createElement("span");
         mobileLocation.classList.add("mobile-label");
-        showLocation.appendChild(mobileLocation);
         mobileLocation.textContent = "Location";
+
+        showLocation.insertBefore(mobileLocation, showLocation.firstChild);
+
+        showItem.appendChild(showLocation);
+
+        // Button
 
         const showButton = document.createElement("td")
         showItem.appendChild(showButton);

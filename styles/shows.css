@@ -216,8 +216,18 @@ body, html {
 .shows-table tr {
   margin: auto;
   width: 388px;
-  margin-left: 10px;
 }
+@media screen and (min-width: 1024px) {
+  .shows-table,
+  .shows-table thead,
+  .shows-table tbody,
+  .shows-table th,
+  .shows-table td,
+  .shows-table tr {
+    width: 67px;
+  }
+}
+
 .date .mobile-label {
   border-top: 1px solid #AFAFAF;
   padding-top: 10px;
@@ -294,7 +304,7 @@ body, html {
 }
 @media screen and (min-width: 1024px) {
   #button2 {
-    min-width: 50%;
+    min-width: 90%;
   }
 }
 
