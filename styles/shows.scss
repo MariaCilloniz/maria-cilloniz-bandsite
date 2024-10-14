@@ -115,8 +115,13 @@ body, html {
     border-top: 1px solid $color-silver;
     padding-top: 10px;                
     margin-top: 10px;  
+    
 
 }
+
+.shows__item:first-of-type .date .mobile-label {
+    border-top: none;
+  }
 
 .shows-table thead {
     display: none;

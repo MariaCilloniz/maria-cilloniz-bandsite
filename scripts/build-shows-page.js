@@ -64,7 +64,7 @@ function loopAndAppendComments(listArray) {
         mobileDate.classList.add("mobile-label");
         mobileDate.textContent = "Date";
 
-        showDate.insertBefore(mobileDate, showDate.firstChild);  // Insert <span> at the beginning of <td>
+        showDate.insertBefore(mobileDate, showDate.firstChild);  
 
         showItem.appendChild(showDate);
 
