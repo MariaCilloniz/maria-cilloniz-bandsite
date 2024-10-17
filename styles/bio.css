@@ -724,4 +724,30 @@ input:focus,
 }
 .delete-icon:hover {
   opacity: 0.8;
+}
+
+.like-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 95%;
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/icons/SVG/icon-like.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.like-icon:hover {
+  opacity: 0.8;
+}
+
+.like-count {
+  margin-left: 97%;
+  font-size: 14px;
+  color: #000;
 }/*# sourceMappingURL=bio.css.map */

@@ -38,6 +38,14 @@ class BandSiteApi {
             console.error("Error deleting comment:", error);
         }
     }
+    async likeComment(commentId) {
+        try {
+            const response = await axios.put(`${this.baseUrl}/comments/${commentId}/like?api_key=${this.apiKey}`);
+            return response.data;
+        } catch (error) {
+            console.error("Error liking comment:", error);
+        }
+    }
 }
 
 

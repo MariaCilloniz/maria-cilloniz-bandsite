@@ -1,5 +1,5 @@
 
-const bandApi = new BandSiteApi(API_KEY); 
+const bandApi = new BandSiteApi(API_KEY);
 
 let conversationForm = document.querySelector(".conversation__form");
 let conversationList = document.querySelector(".conversation-list");
@@ -31,7 +31,7 @@ conversationForm.addEventListener("submit", async function (event) {
 
     if (!event.target.comment.value) {
         alert("Please enter your comment.");
-        event.target.comment.classList.add("error"); 
+        event.target.comment.classList.add("error");
         return;
     }
     const timestamp = Date.now();
@@ -39,7 +39,7 @@ conversationForm.addEventListener("submit", async function (event) {
     const newComment = {
         name: event.target.name.value,
         comment: event.target.comment.value,
-    
+
     };
 
     try {
@@ -48,10 +48,10 @@ conversationForm.addEventListener("submit", async function (event) {
         console.log('Posted successfully');
 
         await fetchComments();
-        
+
         event.target.name.value = "";
         event.target.comment.value = "";
-        
+
     } catch (error) {
         console.error(error);
         alert('Failed to post. Please try again.');
@@ -73,7 +73,7 @@ async function removeComment(commentId) {
 
 function loopAndAppendComments(listArray) {
     conversationList.innerText = "";
-    
+
     listArray.forEach(comment => {
         let listItem = document.createElement("li");
         listItem.classList.add("list__item");
@@ -114,7 +114,30 @@ function loopAndAppendComments(listArray) {
             removeComment(comment.id);
         };
         contentDiv.appendChild(deleteLink);
-       
+
+        let likeContainer = document.createElement("div");
+        likeContainer.classList.add("like-container");
+
+        let likeEmoji = document.createElement("a");
+        likeEmoji.classList.add("like-icon");
+        likeEmoji.href = "";
+
+        let likeCount = document.createElement("span");
+        likeCount.classList.add("like-count");
+        likeCount.textContent = `(${comment.likes || 0})`;
+
+        likeContainer.appendChild(likeEmoji);
+        likeContainer.appendChild(likeCount);
+        
+        likeEmoji.onclick = async (e) => {
+            e.preventDefault();
+            try {
+                const updatedComment = await bandApi.likeComment(comment.id);
+                likeCount.textContent = updatedComment.likes;
+            } catch (error) {
+                console.error('Error liking comment:', error);
+            }
+        };
+        contentDiv.appendChild(likeContainer);
     });
 }
-
