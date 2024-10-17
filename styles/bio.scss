@@ -628,3 +628,23 @@ input:focus,
     border: 2px solid $color-bandsiteblack;
     outline: none;
 }
+
+
+.delete-icon {
+    display: flex;
+    position: relative;
+    left: 95%;
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/icons/SVG/icon-delete.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
