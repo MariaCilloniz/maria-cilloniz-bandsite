@@ -8,7 +8,7 @@ let conversationList = document.querySelector(".conversation-list");
 async function fetchComments() {
     try {
         const comments = await bandApi.getComments();
-        loopAndAppendComments(comments);
+        renderComments(comments);
     } catch (error) {
         console.error(error);
     }
@@ -23,20 +23,27 @@ conversationForm.addEventListener("submit", async function (event) {
     event.target.name.classList.remove("error");
     event.target.comment.classList.remove("error");
 
-    if (!event.target.name.value) {
+    let formHasErrors = false;
+
+    if (!event.target.name.value && !event.target.comment.value) {
+        alert("Please enter your name and comment.");
+        event.target.name.classList.add("error");
+        event.target.comment.classList.add("error");
+        formHasErrors = true;
+    } else if (!event.target.name.value) {
         alert("Please enter your name.");
         event.target.name.classList.add("error");
-        return;
-    }
-
-    if (!event.target.comment.value) {
+        formHasErrors = true;
+    } else if (!event.target.comment.value) {
         alert("Please enter your comment.");
         event.target.comment.classList.add("error");
+        formHasErrors = true;
+    }
+
+    if (formHasErrors) {
         return;
     }
-    const timestamp = Date.now();
-
-    const newComment = {
+    let newComment = {
         name: event.target.name.value,
         comment: event.target.comment.value,
 
@@ -71,7 +78,7 @@ async function removeComment(commentId) {
 }
 
 
-function loopAndAppendComments(listArray) {
+function renderComments(listArray) {
     conversationList.innerText = "";
 
     listArray.forEach(comment => {
@@ -128,7 +135,7 @@ function loopAndAppendComments(listArray) {
 
         likeContainer.appendChild(likeEmoji);
         likeContainer.appendChild(likeCount);
-        
+
         likeEmoji.onclick = async (e) => {
             e.preventDefault();
             try {
