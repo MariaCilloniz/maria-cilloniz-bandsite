@@ -30,7 +30,6 @@ function loopAndAppendShows(listArray) {
     showsSection.appendChild(showsTable);
 
     const tableHead = document.createElement("thead");
-    console.log(tableHead);
     showsTable.appendChild(tableHead);
 
     const tableRow = document.createElement("tr");
@@ -55,7 +54,6 @@ function loopAndAppendShows(listArray) {
 
 
     const tableBody = document.createElement("tbody");
-    console.log(tableBody);
     showsTable.appendChild(tableBody);
 
     for (let i = 0; i < listArray.length; i++) {

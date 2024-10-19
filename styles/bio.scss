@@ -434,9 +434,8 @@
     }
 
     &__form {
-        // border-bottom: 0.0625rem solid #AFAFAF;
         margin-bottom: 1.25rem;
-        background-color: #FFFFFF;
+        background-color: $color-white;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -524,50 +523,10 @@
     &__comment {
         font-size: 1rem;
         line-height: 1.6;
-        color: #555;
+        color: $color-bandsiteblack;
     }
     
 }
-
-
-
-// .list__photo {
-//         width: 3.125rem;
-//         height: 3.125rem;
-//         background-color: #e5e5e5;
-//         border-radius: 50%;
-//         margin-right: 0.625rem;
-//         flex-shrink: 0;
-//         margin-left: -0.625rem;
-//         background-color: $color-mercury;
-//         object-fit: cover;
-
-//  }
-
-
-// .list__content {
-//     flex: 1;
-
-// }
-
-// .list__info {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-bottom: 0.625rem;
-// }
-
-// .list__title {
-//     font-weight: bold;
-//     font-size: 1.125rem;
-//     margin: 0;
-// }
-
-// .list__comment {
-//     font-size: 1rem;
-//     line-height: 1.6;
-//     color: #555;
-// }
 
 .comment {
     &__header {
@@ -619,7 +578,9 @@
         width: 35.5vw;
     }
 }
-
+placeholder{
+    color: #D22D2D;
+}
 #comment {
     width: 59vw;
     padding: 0.625rem;
@@ -628,8 +589,12 @@
     font-size: 1rem;
     min-height: 6.25rem;
     margin-bottom: 1rem;
-    color:$color-bandsiteblack;
-    font-family: $font-family-avenir-p-h3;
+
+    &::placeholder {
+        color:$color-bandsiteblack;
+        font-size: 1rem;
+        font-family: $font-family-avenir-p-h3;
+      }
 
     @include desktop{
         width: 35.5vw;
@@ -638,19 +603,13 @@
 
 }
 
-// .list__photo1 {
-//     width: 3.125rem;
-//     height: 3.125rem;
-//     background-color: #e5e5e5;
-//     border-radius: 50%;
-//     margin-right: 0.625rem;
-//     flex-shrink: 0;
-//     margin-left: -0.625rem;
-// }
-
-// .list__photo1:empty {
-//     visibility: hidden;
-// }
+#name{
+    &::placeholder {
+        color:$color-bandsiteblack;
+        font-size: 1rem;
+        font-family: $font-family-avenir-p-h3;
+      }
+}
 
 .area {
     display: flex;
@@ -659,9 +618,9 @@
 }
 
 button {
-    background-color: #323232;
+    background-color: $color-bandsiteblack;
     font-family: $font-family-avenir-h1-h2-quote-tablet;
-    color: #FFFFFF;
+    color: $color-white;
     border: none;
     border-radius: 0.25rem;
     height: 2.5rem;
@@ -684,7 +643,7 @@ textarea {
 
 input.error,
 #comment.error {
-    border: 0.0625rem solid #D22D2D;
+    border: 0.0625rem solid $color-red;
 }
 
 input:focus,

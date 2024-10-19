@@ -10,7 +10,6 @@ let conversationList = document.querySelector(".list");
 async function fetchComments() {
     try {
         const comments = await bandApi.getComments();
-        console.log(comments);
         renderComments(comments);
     } catch (error) {
         console.error(error);
