@@ -1,12 +1,15 @@
+import BandSiteApi from "./band-site-api.js";
+const API_KEY = "abca44eb-2c0a-4a19-bf5f-46261299965e";
 
-const anotherBandApi = new BandSiteApi(API_KEY);
+const BandApi = new BandSiteApi(API_KEY);
+
 
 const showsSection = document.querySelector(".shows");
 const showsTable = document.createElement("table");
 
 async function fetchAndDisplayShows() {
     try {
-        const shows = await anotherBandApi.getShows();
+        const shows = await BandApi.getShows();
         loopAndAppendShows(shows);
     } catch (error) {
         console.error(error);
@@ -55,7 +58,7 @@ function loopAndAppendShows(listArray) {
     console.log(tableBody);
     showsTable.appendChild(tableBody);
 
-    for (i = 0; i < listArray.length; i++) {
+    for (let i = 0; i < listArray.length; i++) {
 
         const showItem = document.createElement("tr")
         showItem.classList.add("shows__item");

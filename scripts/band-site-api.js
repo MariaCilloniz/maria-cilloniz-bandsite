@@ -1,4 +1,4 @@
-const API_KEY = "0d22d9f7-cfb9-4fcd-9ba9-16e8c06ee334";
+const API_KEY = "abca44eb-2c0a-4a19-bf5f-46261299965e";
 
 class BandSiteApi {
     constructor(apiKey) {
@@ -47,5 +47,7 @@ class BandSiteApi {
         }
     }
 }
+export default BandSiteApi;
+
 
 

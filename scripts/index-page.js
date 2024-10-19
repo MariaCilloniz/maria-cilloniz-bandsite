@@ -1,13 +1,16 @@
 
+import BandSiteApi from "./band-site-api.js";
+const API_KEY = "abca44eb-2c0a-4a19-bf5f-46261299965e";
 const bandApi = new BandSiteApi(API_KEY);
 
 let conversationForm = document.querySelector(".conversation__form");
-let conversationList = document.querySelector(".conversation-list");
+let conversationList = document.querySelector(".list");
 
 
 async function fetchComments() {
     try {
         const comments = await bandApi.getComments();
+        console.log(comments);
         renderComments(comments);
     } catch (error) {
         console.error(error);
@@ -17,47 +20,33 @@ fetchComments();
 
 conversationForm.addEventListener("submit", async function (event) {
     event.preventDefault();
-    console.log("form submitted");
-
-
     event.target.name.classList.remove("error");
     event.target.comment.classList.remove("error");
-
-    let formHasErrors = false;
 
     if (!event.target.name.value && !event.target.comment.value) {
         alert("Please enter your name and comment.");
         event.target.name.classList.add("error");
         event.target.comment.classList.add("error");
-        formHasErrors = true;
+        return;
     } else if (!event.target.name.value) {
         alert("Please enter your name.");
         event.target.name.classList.add("error");
-        formHasErrors = true;
+        return;
     } else if (!event.target.comment.value) {
         alert("Please enter your comment.");
         event.target.comment.classList.add("error");
-        formHasErrors = true;
-    }
-
-    if (formHasErrors) {
         return;
     }
+
     let newComment = {
         name: event.target.name.value,
         comment: event.target.comment.value,
-
     };
 
     try {
-        console.log(newComment);
         await bandApi.postComment(newComment);
-        console.log('Posted successfully');
-
         await fetchComments();
-
-        event.target.name.value = "";
-        event.target.comment.value = "";
+        event.target.reset();
 
     } catch (error) {
         console.error(error);
@@ -69,7 +58,6 @@ conversationForm.addEventListener("submit", async function (event) {
 async function removeComment(commentId) {
     try {
         await bandApi.deleteComment(commentId);
-        console.log('Comment deleted successfully');
         await fetchComments();
     } catch (error) {
         console.error('Error deleting comment:', error);
@@ -114,7 +102,7 @@ function renderComments(listArray) {
         contentDiv.appendChild(commentDiv);
 
         let deleteLink = document.createElement("a");
-        deleteLink.classList.add("delete-icon");
+        deleteLink.classList.add("delete");
         deleteLink.href = "";
         deleteLink.onclick = (e) => {
             e.preventDefault();
@@ -123,20 +111,20 @@ function renderComments(listArray) {
         contentDiv.appendChild(deleteLink);
 
         let likeContainer = document.createElement("div");
-        likeContainer.classList.add("like-container");
+        likeContainer.classList.add("like");
 
-        let likeEmoji = document.createElement("a");
-        likeEmoji.classList.add("like-icon");
-        likeEmoji.href = "";
+        let likeButton = document.createElement("a");
+        likeButton.classList.add("like__icon");
+        likeButton.href = "";
 
         let likeCount = document.createElement("span");
-        likeCount.classList.add("like-count");
+        likeCount.classList.add("like__count");
         likeCount.textContent = `(${comment.likes || 0})`;
 
-        likeContainer.appendChild(likeEmoji);
+        likeContainer.appendChild(likeButton);
         likeContainer.appendChild(likeCount);
 
-        likeEmoji.onclick = async (e) => {
+        likeButton.onclick = async (e) => {
             e.preventDefault();
             try {
                 const updatedComment = await bandApi.likeComment(comment.id);

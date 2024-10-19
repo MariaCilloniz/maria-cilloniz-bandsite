@@ -7,8 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="styles/bio.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script defer src="./scripts/band-site-api.js"></script>
-    <script defer src="./scripts/index-page.js"></script>
+    <script defer type="module" src="./scripts/band-site-api.js"></script>
+    <script defer type="module" src="./scripts/index-page.js"></script>
 </head>
 
 <body class="bio-page">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <div class="input2">
-                    <img class="list__photo1"></img>
+                    <img class="list__photo1" alt="User Avatar"></img>
                     <div class="input-comment">
                         <label class="comment" for="comment">COMMENT</label>
                         <div class="area">
@@ -92,7 +92,7 @@
                 </div>
             </form>
             </div>
-            <ul class="conversation-list"></ul>
+            <ul class="list"></ul>
         </section>
         </section>
     </main>
