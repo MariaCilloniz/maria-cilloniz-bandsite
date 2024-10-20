@@ -43,8 +43,8 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 }
 
@@ -113,8 +113,8 @@ body,
 html {
   margin: 0;
   padding: 0;
-  width: 100%;
   overflow-x: hidden;
+  width: calc(100% + 0.5rem);
 }
 
 .hero {
@@ -189,7 +189,8 @@ html {
 }
 @media screen and (min-width: 1024px) {
   .shows {
-    margin-left: 40%;
+    margin-left: 30%;
+    padding: 2.5rem;
   }
 }
 .shows__title {

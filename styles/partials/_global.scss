@@ -49,8 +49,8 @@ h2 {
     font-family: $font-family-avenir-h1-h2-quote-tablet;
 
     @include tablet {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 2.25rem;
+        line-height: 2.75rem;
     }
 }
 

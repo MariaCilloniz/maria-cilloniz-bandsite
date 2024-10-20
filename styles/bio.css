@@ -43,8 +43,8 @@ h2 {
 }
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 }
 
@@ -381,12 +381,8 @@ p {
   line-height: 1.875rem;
 }
 .footer__logo {
-  width: 20%;
-}
-@media screen and (min-width: 1024px) {
-  .footer__logo {
-    width: 10%;
-  }
+  width: 7.5rem;
+  height: 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .footer__title {
@@ -511,7 +507,6 @@ p {
 }
 @media screen and (min-width: 768px) {
   .conversation__title {
-    margin-top: 0;
     padding-left: 4rem;
   }
 }

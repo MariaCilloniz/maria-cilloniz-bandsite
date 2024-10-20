@@ -6,9 +6,10 @@ body,
 html {
     margin: 0;
     padding: 0;
-    width: 100%;
     overflow-x: hidden;
+    width: calc(100% - -0.5rem);
 }
+
 
 .hero {
     position: relative;
@@ -84,7 +85,8 @@ html {
     padding: 1.75rem;
 
     @include desktop {
-        margin-left: 40%;
+        margin-left: 30%;
+        padding: 2.5rem;
     }
 
     &__title {

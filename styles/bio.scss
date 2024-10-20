@@ -285,11 +285,8 @@
     }
 
     &__logo {
-        width: 20%;
-
-        @include desktop {
-            width: 10%;
-        }
+        width: 7.5rem;
+        height: 1.25rem;
 
     }
 
@@ -428,7 +425,6 @@
         padding-left: 1rem;
 
         @include tablet {
-            margin-top: 0;
             padding-left: 4rem;
         }
     }
